@@ -1,4 +1,4 @@
-int	ft_isascii(char str)
+int	ft_isascii(unsigned char str)
 {
-	return (str >= 0 && str <= 127);
+	return (str <= 127);
 }
