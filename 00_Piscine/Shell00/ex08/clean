@@ -1,0 +1,1 @@
+find . -type f \( -name '*~' -o -name '#*#' \) -exec sh -c 'echo "$1" && rm "$1"' _ {} \;
