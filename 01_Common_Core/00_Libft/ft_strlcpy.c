@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 18:07:18 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 18:43:39 by mpico-bu          #+#    #+#             */
+/*   Updated: 2024/12/04 18:43:39 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stddef.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (src[i] && i < (dsize - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (dsize > 0)
+		dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }

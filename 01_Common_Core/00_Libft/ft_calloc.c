@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 18:07:18 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 21:28:49 by mpico-bu          #+#    #+#             */
+/*   Updated: 2024/12/04 21:28:49 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stdlib.h>
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	void	*ptr;
+	size_t	i;
+
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < (nmemb * size))
+	{
+		((unsigned char *)ptr)[i] = 0;
+		i++;
+	}
+	return (ptr);
 }

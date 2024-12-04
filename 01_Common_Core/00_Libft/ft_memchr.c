@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 18:07:18 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 21:05:16 by mpico-bu          #+#    #+#             */
+/*   Updated: 2024/12/04 21:05:16 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	const unsigned char	*ptr;
+	size_t				i;
+
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr[i] == (unsigned char)c)
+			return ((void *)ptr);
+		ptr++;
+	}
+	return (NULL);
 }

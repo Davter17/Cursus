@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 18:07:18 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 20:53:44 by mpico-bu          #+#    #+#             */
+/*   Updated: 2024/12/04 20:53:44 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <unistd.h>
+
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	const char	*last;
+
+	last = NULL;
+	while (*s)
+	{
+		if (*s == c)
+			last = s;
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return ((char *)last);
 }

@@ -1,5 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/04 17:15:41 by mpico-bu          #+#    #+#              #
+#    Updated: 2024/12/04 17:15:43 by mpico-bu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs

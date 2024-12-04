@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/mario/anaconda3/Library/mingw-w64/include",
+                "C:/Users/mario/anaconda3/Library/mingw-w64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+                "C:/Users/mario/anaconda3/Library/mingw-w64/x86_64-w64-mingw32/include"
+            ],
+            "defines": [],
+            "compilerPath": "C:/Users/mario/anaconda3/Library/mingw-w64/bin/gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
