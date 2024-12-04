@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:43:22 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 21:32:08 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2024/12/04 22:00:03 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <libft.h>
 
 typedef struct s_list
 {
