@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpico-bu <mpico-bu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 21:47:06 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/06 21:47:06 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 17:01:06 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/14 17:01:11 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <limits.h>
-#include <stddef.h>
-
-char	*ft_strdup(const char *s);
+#include "libft.h"
 
 // Calculates the length of the integer `n` when represented as a string
 
@@ -25,14 +23,14 @@ int	ft_num_len(int n)
 	len = 0;
 	if (n == 0)
 		return (1);
-	else if (n == INT_MIN)
+	if (n == INT_MIN)
 		return (11);
-	else if (n < 0)
+	if (n < 0)
 	{
 		len = 1;
 		n = -n;
 	}
-	while (n != 0 && n != INT_MIN)
+	while (n != 0)
 	{
 		n = n / 10;
 		len++;

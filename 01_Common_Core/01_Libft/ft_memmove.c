@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:27:21 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:27:10 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:11:17 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 //Copies `n` bytes from the `src` to the `dest`, handling overlapping.
 

@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:19:14 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:25:57 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:10:07 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // Copies `n` bytes from the `src` memory block to the `dest` memory block.
 

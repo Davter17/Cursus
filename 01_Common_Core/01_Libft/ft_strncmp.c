@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:00:36 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:30:35 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:50:36 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // Compares the first `n` characters of the strings `s1` and `s2`.
 

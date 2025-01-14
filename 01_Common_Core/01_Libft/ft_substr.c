@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpico-bu <mpico-bu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 16:56:54 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/06 16:56:54 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 17:01:42 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/14 17:01:45 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
-
-void	*ft_calloc(size_t nmemb, size_t size);
+#include "libft.h"
 
 // Extracts a substring starting at `start` from the string `s`.
 

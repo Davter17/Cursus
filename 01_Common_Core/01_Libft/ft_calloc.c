@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:28:49 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 13:38:08 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:21:39 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
+	void	*arr;
 	size_t	i;
 
-	ptr = malloc(nmemb * size);
-	if (!ptr)
+	arr = malloc(nmemb * size);
+	if (!arr)
 		return (NULL);
 	i = 0;
 	while (i < (nmemb * size))
 	{
-		((unsigned char *)ptr)[i] = 0;
+		((unsigned char *)arr)[i] = 0;
 		i++;
 	}
-	return (ptr);
+	return (arr);
 }

@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:32:26 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:33:38 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:20:08 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 #include <stdlib.h>
 
 // Allocates memory and copies the string `s`, returning a pointer to it.

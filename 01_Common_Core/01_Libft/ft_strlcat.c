@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:55:01 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:28:48 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:58:30 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 //Appends `src` to the end of `dst`. ensuring the total length does not exceed.
 

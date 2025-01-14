@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpico-bu <mpico-bu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 21:24:23 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/15 21:24:23 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 17:03:36 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/14 17:03:38 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 // Writes the string `s` followed by a newline character to the file descriptor.
 

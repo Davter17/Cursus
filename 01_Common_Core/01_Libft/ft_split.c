@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpico-bu <mpico-bu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 17:52:04 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/06 17:52:04 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 17:02:48 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/14 17:02:50 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ char	**ft_allocate_result(char **result, size_t s_word, size_t len)
 	if (!result[s_word])
 	{
 		while (s_word > 0)
-			free(result[--s_word]);
+		{
+			s_word--;
+			free(result[s_word]);
+		}
 		free(result);
 		return (NULL);
 	}
@@ -43,7 +46,7 @@ char	**ft_split_parse(size_t max_words, char **result, char const *s, char c)
 		while (s[i] == c)
 			i++;
 		j = 0;
-		while (s[i + j] != c && s[i + j] != '\0')
+		while (s[i + j] != c && s[i + j])
 			j++;
 		if (!(ft_allocate_result(result, s_word, j)))
 			return (NULL);
@@ -67,10 +70,10 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	char	**result;
 
-	max_words = 0;
-	i = 0;
 	if (!s)
 		return (NULL);
+	max_words = 0;
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))

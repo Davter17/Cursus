@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpico-bu <mpico-bu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 17:26:30 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/06 17:26:30 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 17:02:06 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/14 17:02:08 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
+#include "libft.h"
 
 // Removes characters from the beginning and end of s1 that are also in the set.
 

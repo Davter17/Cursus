@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:16:59 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:23:12 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:47:59 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // Returns the number of characters in a string, excluding the null terminator.
 

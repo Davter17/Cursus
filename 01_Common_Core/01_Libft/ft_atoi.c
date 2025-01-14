@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:20:49 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:31:59 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:04:49 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	i;
 
-	result = 0;
-	sign = 1;
 	i = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
+	sign = 1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			sign *= -1;
+			sign = -1;
 		i++;
 	}
+	result = 0;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result = result * 10 + (nptr[i] - '0');

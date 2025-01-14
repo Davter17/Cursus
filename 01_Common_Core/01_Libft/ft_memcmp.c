@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:09:23 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:31:09 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:09:00 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // Compares the first `n` bytes of memory blocks `s1` and `s2`.
 

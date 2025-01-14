@@ -6,31 +6,31 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:13:33 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:31:45 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:19:15 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <bsd/string.h>
-#include <stddef.h>
+#include "libft.h"
 
-// Finds the first string `needle` in the `haystack`, limited to `n` characters.
+// Finds the first string `little` in the `big`, limited to `n` characters.
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	if (*needle == 0)
-		return ((char *) haystack);
-	while (haystack[i] != '\0' && i < n)
+	if (*little == 0)
+		return ((char *) big);
+	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
-		while (i + j < n && needle[j] != '\0' && haystack [i + j] == needle[j])
+		while (i + j < len && little[j] != '\0' && big [i + j] == little[j])
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&haystack[i]);
+			if (little[j + 1] == '\0')
+				return ((char *)&big[i]);
 			j++;
 		}
 		i++;
