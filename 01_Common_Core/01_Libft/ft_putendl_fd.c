@@ -15,6 +15,8 @@
 
 size_t	ft_strlen(const char *s);
 
+// Writes the string `s` followed by a newline character to the file descriptor.
+
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)

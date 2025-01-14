@@ -6,11 +6,13 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:17:24 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 17:17:28 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:23:39 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+
+// Fills a block of memory with the byte `c` for `n` bytes.
 
 void	*ft_memset(void *s, int c, size_t n)
 {

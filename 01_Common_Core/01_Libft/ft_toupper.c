@@ -6,9 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:08:55 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 19:08:55 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:29:15 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Converts a lowercase letter to uppercase.
 
 int	ft_toupper(int c)
 {

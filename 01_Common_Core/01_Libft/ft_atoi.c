@@ -6,9 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:20:49 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 21:20:49 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:31:59 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Converts the string `nptr` to an integer.
 
 int	ft_atoi(const char *nptr)
 {
@@ -16,9 +18,9 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	i;
 
-	i = 0;
-	sign = 1;
 	result = 0;
+	sign = 1;
+	i = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')

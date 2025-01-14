@@ -11,16 +11,22 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stddef.h>
 
-size_t	ft_strlen(const char *s);
-char	*ft_itoa(int n);
+// Writes the integer `n` to the file descriptor `fd`.
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*n_char;
-
-	n_char = ft_itoa(n);
-	if (n_char)
-		write(fd, n_char, ft_strlen(n_char));
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	write(fd, &"0123456789"[n % 10], 1);
 }

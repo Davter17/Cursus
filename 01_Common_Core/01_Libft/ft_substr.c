@@ -15,6 +15,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
+// Extracts a substring starting at `start` from the string `s`.
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_str;

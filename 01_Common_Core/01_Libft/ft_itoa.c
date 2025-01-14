@@ -12,6 +12,11 @@
 
 #include <stdlib.h>
 #include <limits.h>
+#include <stddef.h>
+
+char	*ft_strdup(const char *s);
+
+// Calculates the length of the integer `n` when represented as a string
 
 int	ft_num_len(int n)
 {
@@ -35,6 +40,8 @@ int	ft_num_len(int n)
 	return (len);
 }
 
+// Fills `str` with the character digits of `n` based on its length and sign.
+
 void	ft_fill_str(char *str, int n, int len, int sign)
 {
 	if (sign == -1)
@@ -50,6 +57,8 @@ void	ft_fill_str(char *str, int n, int len, int sign)
 	}
 }
 
+// Converts the integer `n` to its string representation.
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -57,7 +66,7 @@ char	*ft_itoa(int n)
 	int		sign;
 
 	if (n == INT_MIN)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	len = ft_num_len(n);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)

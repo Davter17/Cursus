@@ -14,6 +14,8 @@
 #include <ctype.h>
 #include <stdio.h>
 
+// Applies `f` to each character of  `s` and returns a new string.
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*new_str;

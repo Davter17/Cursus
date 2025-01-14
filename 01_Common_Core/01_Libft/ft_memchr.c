@@ -6,11 +6,13 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:05:16 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/13 16:28:43 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:30:54 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+
+// Searches for the first occurrence of the byte `c` in the memory block `s`.
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

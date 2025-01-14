@@ -11,9 +11,13 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
+void	*ft_calloc(size_t nmemb, size_t size);
+
+// Removes characters from the beginning and end of s1 that are also in the set.
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -27,18 +31,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
+	if (start >= end)
+		return (ft_calloc(1, sizeof(char)));
+	end--;
 	while (end > start && ft_strchr(set, s1[end]))
 		end--;
 	s_trimmed = malloc((end - start + 2) * sizeof(char));
 	if (!s_trimmed)
 		return (NULL);
-	i = 0;
-	while (start + i <= end)
-	{
+	i = -1;
+	while (start + ++i <= end)
 		s_trimmed[i] = s1[start + i];
-		i++;
-	}
 	s_trimmed[i] = '\0';
 	return (s_trimmed);
 }

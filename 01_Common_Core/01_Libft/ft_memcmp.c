@@ -6,11 +6,13 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:09:23 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 21:09:23 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:31:09 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+
+// Compares the first `n` bytes of memory blocks `s1` and `s2`.
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

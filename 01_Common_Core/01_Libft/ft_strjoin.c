@@ -15,6 +15,8 @@
 
 size_t	ft_strlen(const char *s);
 
+// Concatenates the strings `s1` and `s2` and returns a new string.
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;

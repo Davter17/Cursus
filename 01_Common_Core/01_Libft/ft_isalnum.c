@@ -6,9 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 18:07:18 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:22:19 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Checks if the given character is either a letter or a digit.
 
 int	ft_isalnum(int c)
 {

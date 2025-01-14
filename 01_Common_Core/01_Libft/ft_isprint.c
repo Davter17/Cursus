@@ -6,9 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:16:47 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/04 17:53:08 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:22:49 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Checks if the character is printable, meaning it can be displayed on screen.
 
 int	ft_isprint(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:16:14 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/13 18:58:51 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:22:33 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Checks if the character is a valid ASCII character (0-127).
 
 int	ft_isascii(int c)
 {

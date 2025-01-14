@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+// Allocates memory for each substring in the result array.
+
 char	**ft_allocate_result(char **result, size_t s_word, size_t len)
 {
 	result[s_word] = malloc((len + 1) * sizeof(char));
@@ -26,7 +28,9 @@ char	**ft_allocate_result(char **result, size_t s_word, size_t len)
 	return (result);
 }
 
-char	**ft_split2(size_t max_words, char **result, char const *s, char c)
+// Splits the string into substrings up to `max_words` and allocates memory.
+
+char	**ft_split_parse(size_t max_words, char **result, char const *s, char c)
 {
 	size_t	s_word;
 	size_t	i;
@@ -55,6 +59,8 @@ char	**ft_split2(size_t max_words, char **result, char const *s, char c)
 	return (result);
 }
 
+// Splits the string `s` into an array of substrings, separated by `c`.
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	max_words;
@@ -74,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	result = malloc((max_words + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	result = ft_split2(max_words, result, s, c);
+	result = ft_split_parse(max_words, result, s, c);
 	if (!result)
 		return (NULL);
 	result[max_words] = NULL;

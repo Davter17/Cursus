@@ -6,11 +6,13 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:16:59 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/06 18:01:32 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:23:12 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+
+// Returns the number of characters in a string, excluding the null terminator.
 
 size_t	ft_strlen(const char *s)
 {
