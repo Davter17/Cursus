@@ -30,3 +30,17 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	write(fd, &"0123456789"[n % 10], 1);
 }
+
+/*
+#include <fcntl.h>
+
+int main(void)
+{
+	int	fd;
+
+	fd = open("a.txt", O_WRONLY);
+	ft_putnbr_fd(147, fd);
+	close(fd);
+	return (0);
+}
+*/

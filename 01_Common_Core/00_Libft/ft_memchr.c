@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:05:16 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 15:07:21 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:01:30 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,19 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+int main(void)
+{
+	const void	*s;
+	void		*sub_s;
+	int			c;
+	size_t		n;
+	
+	s = "hello world";
+	c = 'l';
+	n = 5;
+	sub_s = ft_memchr(s, c, n);
+	write(1, sub_s, 2);
+	return (0);
+}
+*/

@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <ctype.h>
 #include <stdio.h>
 
-// Applies `f` to each character of  `s` and returns a new string.
+// Applies `f` to each character of `s` and returns a new string.
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -39,3 +39,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_str[i] = '\0';
 	return (new_str);
 }
+/*
+void ft_toupper_iter(unsigned int i, char c)
+{
+	(void)i;
+    c = ft_toupper(c);
+}
+
+int main(void)
+{
+	char const	*s;
+    char *upper_str;
+
+	s = "hello";
+    upper_str = ft_strmapi(s, ft_toupper_iter);
+    write(1, upper_str, 5);
+    return (0);  
+}
+*/

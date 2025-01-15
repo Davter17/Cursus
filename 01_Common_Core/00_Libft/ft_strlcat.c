@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:55:01 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 15:58:30 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:13:52 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
+
+/*
+int main(void)
+{
+	const char	*s1;
+	char		*dup;
+	size_t		size;
+
+	s1 = "hello world";
+	dup = malloc(1024);
+	size = ft_strlcat(dup, s1, 12);
+	write(1, dup, 12);
+	write(1, "\n", 1);
+	write(1, &"0123456789"[(int)size], 1);
+	return (0);
+}
+*/

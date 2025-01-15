@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:09:23 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 15:09:00 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:05:23 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,20 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main(void)
+{
+	const void	*s1;
+	const void	*s2;
+	int			numb;
+	size_t		n;
+	
+	s1 = "helle world";
+	s2 = "hella world";
+	n = 7;
+	numb = ft_memcmp(s1, s2, n);
+	write(1, &"0123456789"[numb], 1);
+	return (0);
+}
+*/

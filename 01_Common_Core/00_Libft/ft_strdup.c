@@ -6,12 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:32:26 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 17:20:08 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:10:24 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 // Allocates memory and copies the string `s`, returning a pointer to it.
 
@@ -36,3 +35,18 @@ char	*ft_strdup(const char *s)
 	dup[len] = '\0';
 	return (dup);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	const char	*s;
+	char		*dup;
+
+	s = "hello world";
+	dup = ft_strdup(s);
+	write(1, dup, 11);
+	return (0);
+}
+*/

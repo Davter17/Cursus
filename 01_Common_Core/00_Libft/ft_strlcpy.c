@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:43:39 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 16:47:52 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:15:31 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 		i++;
 	return (i);
 }
+
+/*
+int main(void)
+{
+	const char	*src;
+	char		*dst;
+	size_t		dsize;
+
+	src = "hell";
+	dst = malloc(1024);
+	dsize = ft_strlcpy(dst, src, 12);
+	write(1, dst, 12);
+	write(1, "\n", 1);
+	write(1, &"0123456789"[(int)dsize], 1);
+	return (0);
+}
+*/

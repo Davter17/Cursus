@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
 // Allocates memory for each substring in the result array.
 
@@ -89,3 +88,25 @@ char	**ft_split(char const *s, char c)
 	result[max_words] = NULL;
 	return (result);
 }
+
+/*
+int main(void)
+{
+    char const	*s;
+    char		c;
+    char		**spl;
+    int 		i;
+
+    s = "hel_lo_world_";
+    c = '_';
+    spl = ft_split(s, c);
+    i = 0;
+	while (spl[i])
+	{
+		write(1, spl[i], 8);
+		write(1, "\n", 1);
+		i++;
+	}
+    return (0);
+}
+*/

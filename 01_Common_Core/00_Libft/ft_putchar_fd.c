@@ -18,3 +18,17 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+/*
+#include <fcntl.h>
+
+int main(void)
+{
+	int	fd;
+
+	fd = open("a.txt", O_WRONLY);
+	ft_putchar_fd('b', fd);
+	close(fd);
+	return (0);
+}
+*/

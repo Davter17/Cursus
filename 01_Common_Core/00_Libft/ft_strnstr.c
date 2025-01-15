@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:13:33 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 17:19:15 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:22:59 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*
+int main(void)
+{
+	const char	*big;
+	const char	*little;
+	char		*dup;
+
+	big = "hello wo";
+	little = "ll";
+	dup = ft_strnstr(big, little, 16);
+	write(1, dup, 16);
+	return (0);
+}
+
+*/

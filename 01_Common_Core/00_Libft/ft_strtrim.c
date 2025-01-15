@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 // Removes characters from the beginning and end of s1 that are also in the set.
@@ -42,3 +41,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s_trimmed[i] = '\0';
 	return (s_trimmed);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	char const	*s1;
+	char const	*set;
+	char		*new;
+
+	s1 = "hhhhhoooooohllllhoodedeohdllohhhhooo";
+	set = "ho";
+	new = ft_strtrim(s1, set);
+	write(1, new, 16);
+	return (0);
+}
+*/

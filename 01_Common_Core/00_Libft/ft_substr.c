@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 // Extracts a substring starting at `start` from the string `s`.
@@ -42,3 +41,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub_str[i] = '\0';
 	return (sub_str);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	char const		*s;
+	char			*sub_s;
+	unsigned int	start;
+	size_t			len;
+
+	s = "hello world";
+	start = 2;
+	len	= 2;
+	sub_s = ft_substr(s, start, len);
+	write(1, sub_s, 4);
+	return (0);
+}
+*/

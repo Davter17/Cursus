@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 // Concatenates the strings `s1` and `s2` and returns a new string.
@@ -41,3 +40,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[i] = '\0';
 	return (s3);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	const char	*s1;
+	const char	*s2;
+	char		*dup;
+
+	s1 = "hello wo";
+	s2 = "rldle";
+	dup = ft_strjoin(s1, s2);
+	write(1, dup, 16);
+	return (0);
+}
+*/

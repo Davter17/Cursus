@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:16:14 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:22:33 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 02:43:46 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,15 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	int	numb;
+
+	numb = ft_isascii('-');
+	write(1, &"0123456789"[numb], 1);
+	return (0);
+}
+*/

@@ -21,3 +21,16 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
+/*
+#include <fcntl.h>
+
+int main(void)
+{
+	int	fd;
+
+	fd = open("a.txt", O_WRONLY);
+	ft_putstr_fd("hello", fd);
+	close(fd);
+	return (0);
+}
+*/

@@ -6,11 +6,13 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:03:20 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 19:52:35 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:15:32 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Creates a new list by applying the function to each node's content.
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

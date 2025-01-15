@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <limits.h>
 #include "libft.h"
 
@@ -81,3 +80,16 @@ char	*ft_itoa(int n)
 	ft_fill_str(str, n, len, sign);
 	return (str);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	char	*str;
+
+	str = ft_itoa(-17);
+	write(1, str, 3);
+	return (0);
+}
+*/

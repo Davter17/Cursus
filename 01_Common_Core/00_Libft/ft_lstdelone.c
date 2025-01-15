@@ -6,12 +6,14 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:02:23 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 19:46:10 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:15:13 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdio.h>
+
+// Deletes a node and frees its content.
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

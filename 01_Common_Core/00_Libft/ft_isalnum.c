@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 12:22:19 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 02:43:01 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,16 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	int	numb;
+
+	numb = ft_isalnum('-');
+	write(1, &"0123456789"[numb], 1);
+	return (0);
+}
+*/

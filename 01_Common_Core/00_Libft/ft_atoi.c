@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:20:49 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/14 14:04:49 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 02:32:22 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,20 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	const char	*nptr;
+	int			number;
+
+	nptr = "0";
+	number = ft_atoi(nptr);
+	write(1, &"0123456789"[number / 100 % 10], 1);
+	write(1, &"0123456789"[number / 10 % 10], 1);
+	write(1, &"0123456789"[number / 1 % 10], 1);
+	return (1);
+}
+*/
