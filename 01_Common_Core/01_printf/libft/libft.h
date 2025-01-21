@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:43:22 by mpico-bu          #+#    #+#             */
-/*   Updated: 2024/12/19 18:50:04 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:07:31 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
@@ -72,14 +71,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-//Printf
-int		ft_printf(const char *format, ...);
-int		ft_print_char(char c);
-int		ft_print_string(char *str);
-int		ft_print_pointer(void *ptr);
-int		ft_print_int(int n);
-int		ft_print_unsigned(unsigned int n);
-int		ft_print_hex(unsigned long n, int uppercase);
 
 #endif

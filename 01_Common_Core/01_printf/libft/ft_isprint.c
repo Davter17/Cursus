@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:05:22 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 17:16:47 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 02:44:10 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+// Checks if the character is printable, meaning it can be displayed on screen.
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 41
-# endif
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+/*
+#include <unistd.h>
 
-char	*get_next_line(int fd);
+int main(void)
+{
+	int	numb;
 
-#endif
+	numb = ft_isprint('-');
+	write(1, &"0123456789"[numb], 1);
+	return (0);
+}
+*/

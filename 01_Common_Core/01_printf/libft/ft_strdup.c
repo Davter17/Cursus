@@ -1,53 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:16:53 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/18 17:36:15 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 21:32:26 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 12:10:24 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
+
+// Allocates memory and copies the string `s`, returning a pointer to it.
 
 char	*ft_strdup(const char *s)
 {
-	char	*dup;
-	int		i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	dup = malloc((i + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	dup[i] = '\0';
-	while (i > 0)
-	{
-		i--;
-		dup[i] = s[i];
-	}
-	return (dup);
-}
-
-char	*ft_strndup(const char *s, size_t n)
-{
+	size_t	len;
 	char	*dup;
 	size_t	i;
 
-	i = 0;
-	while (s[i] && i < n)
-		i++;
-	dup = malloc((i + 1) * sizeof(char));
+	len = 0;
+	while (s[len])
+		len++;
+	dup = malloc(len + 1);
 	if (!dup)
 		return (NULL);
-	dup[i] = '\0';
-	while (i > 0)
+	i = 0;
+	while (i < len)
 	{
-		i--;
 		dup[i] = s[i];
+		i++;
 	}
+	dup[len] = '\0';
 	return (dup);
 }
+
+/*
+#include <unistd.h>
+
+int main(void)
+{
+	const char	*s;
+	char		*dup;
+
+	s = "hello world";
+	dup = ft_strdup(s);
+	write(1, dup, 11);
+	return (0);
+}
+*/

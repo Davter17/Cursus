@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:05:22 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 17:14:00 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 02:43:01 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+// Checks if the given character is either a letter or a digit.
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 41
-# endif
+int	ft_isalnum(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+/*
+#include <unistd.h>
 
-char	*get_next_line(int fd);
+int main(void)
+{
+	int	numb;
 
-#endif
+	numb = ft_isalnum('-');
+	write(1, &"0123456789"[numb], 1);
+	return (0);
+}
+*/

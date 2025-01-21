@@ -1,0 +1,4 @@
+Usuario = davter
+Contraseña = Superclave1
+Nombre Maquina = Born2beroot
+Nombre Dominio = myguest.virtualbox.org

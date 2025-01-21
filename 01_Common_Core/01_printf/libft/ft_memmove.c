@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:27:21 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/21 12:03:12 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:08:54 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
 /*
 int main(void)
 {

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:05:22 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 19:08:55 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 02:53:01 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+// Converts a lowercase letter to uppercase.
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 41
-# endif
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+/*
+#include <unistd.h>
 
-char	*get_next_line(int fd);
+int main (void)
+{
+	int	cap;
 
-#endif
+	cap = ft_toupper('-');
+	write(1, &cap, 1);
+}
+*/

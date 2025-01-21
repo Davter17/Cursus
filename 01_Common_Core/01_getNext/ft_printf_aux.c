@@ -1,53 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_printf_aux.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:16:53 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/18 17:36:15 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/19 19:06:05 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/20 22:15:58 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
 
 char	*ft_strdup(const char *s)
 {
-	char	*dup;
-	int		i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	dup = malloc((i + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	dup[i] = '\0';
-	while (i > 0)
-	{
-		i--;
-		dup[i] = s[i];
-	}
-	return (dup);
-}
-
-char	*ft_strndup(const char *s, size_t n)
-{
+	size_t	len;
 	char	*dup;
 	size_t	i;
 
-	i = 0;
-	while (s[i] && i < n)
-		i++;
-	dup = malloc((i + 1) * sizeof(char));
+	len = 0;
+	while (s[len])
+		len++;
+	dup = malloc(len + 1);
 	if (!dup)
 		return (NULL);
-	dup[i] = '\0';
-	while (i > 0)
+	i = 0;
+	while (i < len)
 	{
-		i--;
 		dup[i] = s[i];
+		i++;
 	}
+	dup[len] = '\0';
 	return (dup);
 }

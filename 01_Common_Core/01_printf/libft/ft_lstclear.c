@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:05:22 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 18:02:40 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 16:15:20 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 41
-# endif
+// Clears the entire list and frees all nodes.
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*aux;
 
-char	*get_next_line(int fd);
-
-#endif
+	if (!lst || !del || !*lst)
+		return ;
+	while (*lst)
+	{
+		aux = *lst;
+		*lst = (*lst)->next;
+		del(aux->content);
+		free(aux);
+	}
+}
