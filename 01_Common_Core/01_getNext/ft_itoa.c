@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include "ft_printf.h"
+#include "get_next_line.h"
 
 // Calculates the length of the integer `n` when represented as a string
 

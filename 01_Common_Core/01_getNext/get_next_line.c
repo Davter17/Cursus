@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:40 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:29:23 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:41:18 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*
 #include <fcntl.h>
 
 int main (void)
@@ -83,13 +82,11 @@ int main (void)
 	fd = open("a.txt",  O_RDONLY);
 	txt = malloc(1024 * sizeof(char));
 	i = 0;
-	while (i < 12)
+	while (txt)
 	{
 		txt = get_next_line(fd);
 		write(1, txt, 50);
-		i++;
 	}
 	close(fd);
 	return (0);
 }
-*/

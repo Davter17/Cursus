@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:53 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/18 17:36:15 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:43:45 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,27 @@ char	*ft_strndup(const char *s, size_t n)
 		i--;
 		dup[i] = s[i];
 	}
+	return (dup);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*dup;
+	size_t	i;
+
+	len = 0;
+	while (s[len])
+		len++;
+	dup = malloc(len + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[len] = '\0';
 	return (dup);
 }

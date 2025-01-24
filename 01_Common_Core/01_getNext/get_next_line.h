@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/19 11:05:22 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:43:55 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+#include <limits.h>
 
 char	*get_next_line(int fd);
+char	*ft_strdup(const char *s);
 
 #endif

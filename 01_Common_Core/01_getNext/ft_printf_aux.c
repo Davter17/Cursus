@@ -6,11 +6,11 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:06:05 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/20 22:15:58 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:42:12 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
