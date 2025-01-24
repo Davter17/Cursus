@@ -1,4 +1,4 @@
-Usuario = davter
+Usuario = mpico-bu42
 Contraseña = Superclave1
 Nombre Maquina = Born2beroot
-Nombre Dominio = myguest.virtualbox.org
+Nombre Dominio = 

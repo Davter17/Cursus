@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:40 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/22 16:41:18 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:50:15 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
+/*
 #include <fcntl.h>
 
 int main (void)
@@ -86,7 +87,10 @@ int main (void)
 	{
 		txt = get_next_line(fd);
 		write(1, txt, 50);
+		write(1, &"0123456789"[i], 1);
+		i++;
 	}
 	close(fd);
 	return (0);
 }
+*/
