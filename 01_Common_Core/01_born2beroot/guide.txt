@@ -1,0 +1,54 @@
+INITIAL CHECKS
+
+shasum [name_vdi]                   # Checks the signature of the machine
+ls /usr/bin/*session				# Checks there is no graphical interface
+sudo service ufw status				# Checks if UFW service is running
+sudo service ssh status				# Checks if SSH service is running
+uname -v							# Checks the operating system (Debian/CentOS)
+
+USER AND GROUP MANAGEMENT
+
+nano /etc/login.defs				# Shows the login and password policy
+nano /etc/pam.d/common-password		# Shows the passwords requires
+sudo adduser [name_user]			# Creates a new user called 'name_user'
+sudo addgroup [name_group]			# Creates a new group called 'name_group'
+sudo adduser [n_user] [n_group]     # Adds 'n_user' to 'n_group' group
+getent group [name_group]			# Checks the users in 'name_group' group
+
+
+SYSTEM CONFIGURATION
+
+hostname							# Checks the current hostname
+sudo nano /etc/hostname				# Modifies the hostname
+sudo nano /etc/hosts				# Updates the hostname references
+sudo reboot							# Reboots the system to apply changes
+lsblk								# Lists partitions and their mount points
+
+SUDO CONFIGURATION AND LOGGING
+
+nano /etc/sudoers.d/sudo_config     # Shows custom sudo configuration
+which sudo							# Checks if sudo is installed
+dpkg -s sudo						# Checks sudo package details
+ls /var/log/sudo/					# Checks sudo logs directory
+cat /var/log/sudo/sudo.log			# Displays sudo command logs
+
+FIREWALL CONFIGURATION (UFW)
+
+sudo ufw status						# Checks if UFW service is active
+sudo ufw allow [port_number]		# Adds a rule to allow traffic on 'port_number'
+sudo ufw status numbered			# Lists active UFW rules
+sudo ufw delete [rule_number]		# Deletes a specific UFW rule
+
+SSH SERVICE CHECKS
+
+sudo nano /etc/ssh/sshd_config      # Shows the display port (4242)
+nano /etc/ssh/ssh_config			# Shows the display SSH port (4242)
+which ssh							# Verifies SSH is installed
+ssh [name_user]@localhost -p [port]	# Connects via SSH with the 'name_user'
+ssh root@localhost -p [port]		# Tries SSH login as root (blocked)
+
+CRON JOBS CONFIGURATION
+
+sudo crontab -u root -e				# Modifies the root crontab
+sudo /etc/init.d/cron stop			# Stops the cron service
+sudo /etc/init.d/cron start			# Starts the cron service

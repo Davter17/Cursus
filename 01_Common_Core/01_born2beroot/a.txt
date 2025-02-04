@@ -1,4 +1,0 @@
-Usuario = mpico-bu42
-Contraseña = Superclave1
-Nombre Maquina = Born2beroot
-Nombre Dominio = 
