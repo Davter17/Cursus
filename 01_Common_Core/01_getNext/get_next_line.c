@@ -6,91 +6,102 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:40 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/01/24 11:50:15 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:26:49 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	check_bytes_read(ssize_t bytes_read, int i, char *buffer)
+char	*read_and_store(int fd, char *buffer, ssize_t *bytes_read)
 {
-	if (bytes_read < 0 || (bytes_read == 0 && i == 0))
+	char	*tmp;
+	char	*read_buf;
+
+	read_buf = malloc(BUFFER_SIZE + 1);
+	if (!read_buf)
+		return (NULL);
+	*bytes_read = 1;
+	while (*bytes_read > 0 && (!buffer || !ft_strchr(buffer, '\n')))
+	{
+		*bytes_read = read(fd, read_buf, BUFFER_SIZE);
+		if (*bytes_read < 0)
+		{
+			free(read_buf);
+			free(buffer);
+			return (NULL);
+		}
+		read_buf[*bytes_read] = '\0';
+		if (!buffer)
+			buffer = ft_strdup("");
+		if (!buffer)
+		{
+			free(read_buf);
+			return (NULL);
+		}
+		tmp = ft_strjoin(buffer, read_buf);
+		free(buffer);
+		if (!tmp)
+		{
+			free(read_buf);
+			return (NULL);
+		}
+		buffer = tmp;
+	}
+	free(read_buf);
+	return (buffer);
+}
+
+char	*extract_line(char *buffer)
+{
+	int		len;
+	char	*line;
+
+	if (!buffer || !buffer[0])
+		return (NULL);
+	len = 0;
+	while (buffer[len] && buffer[len] != '\n')
+		len++;
+	line = ft_substr(buffer, 0, len + (buffer[len] == '\n'));
+	return (line);
+}
+
+char	*update_buffer(char *buffer)
+{
+	int		start;
+	char	*new_buffer;
+
+	if (!buffer)
+		return (NULL);
+	start = 0;
+	while (buffer[start] && buffer[start] != '\n')
+		start++;
+	if (!buffer[start])
 	{
 		free(buffer);
-		return (0);
+		return (NULL);
 	}
-	return (1);
+	new_buffer = ft_strdup(buffer + start + 1);
+	free(buffer);
+	return (new_buffer);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	*buffer[MAX_FD];
 	char		*line;
-	ssize_t		i;
-	ssize_t		j;
 	ssize_t		bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= MAX_FD || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buffer[fd] = read_and_store(fd, buffer[fd], &bytes_read);
+	if (!buffer[fd])
+		return (NULL);
+	line = extract_line(buffer[fd]);
+	buffer[fd] = update_buffer(buffer[fd]);
 	if (!line)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (1)
 	{
-		if (j == 0)
-		{
-			bytes_read = read(fd, buffer, BUFFER_SIZE);
-			if (bytes_read <= 0)
-				break ;
-			buffer[bytes_read] = '\0';
-		}
-		while (buffer[j] && buffer[j] != '\n')
-		{
-			line[i] = buffer[j];
-			i++;
-			j++;
-		}
-		if (buffer[j] == '\n')
-		{
-			line[i] = buffer[j];
-			i++;
-			j++;
-			break ;
-		}
-		if (j >= BUFFER_SIZE)
-			j = 0;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 	}
-	if (i == 0)
-	{
-		free(line);
-		return (NULL);
-	}
-	line[i] = '\0';
 	return (line);
 }
-
-/*
-#include <fcntl.h>
-
-int main (void)
-{
-	int 	fd;
-	char	*txt;
-	int		i;
-	
-	fd = open("a.txt",  O_RDONLY);
-	txt = malloc(1024 * sizeof(char));
-	i = 0;
-	while (txt)
-	{
-		txt = get_next_line(fd);
-		write(1, txt, 50);
-		write(1, &"0123456789"[i], 1);
-		i++;
-	}
-	close(fd);
-	return (0);
-}
-*/
