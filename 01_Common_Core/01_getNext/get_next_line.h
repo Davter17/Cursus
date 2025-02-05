@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/04 23:23:50 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:10:12 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 # define MAX_FD 1024
 
 char	*get_next_line(int fd);
-char	*read_and_store(int fd, char *buffer, ssize_t *bytes_read);
+char	*read_and_store(int fd, char *buffer);
 char	*extract_line(char *buffer);
 char	*update_buffer(char *buffer);
 
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin_and_replace(char *s1, char *s2);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 

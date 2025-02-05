@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:53 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/04 23:19:29 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:10:07 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_and_replace(char *s1, char *s2)
 {
 	size_t	len1;
 	size_t	len2;
@@ -47,6 +47,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[++len2])
 		new_str[len1 + len2] = s2[len2];
 	new_str[len1 + len2] = '\0';
+	free(s1);
 	return (new_str);
 }
 
