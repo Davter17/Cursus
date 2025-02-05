@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:53 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/05 12:41:13 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:39:08 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 // Returns a pointer to the first character `c` in the string `s`.
 char	*ft_strchr(const char *s, int c)

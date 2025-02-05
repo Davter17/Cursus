@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/05 12:13:43 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:38:56 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
