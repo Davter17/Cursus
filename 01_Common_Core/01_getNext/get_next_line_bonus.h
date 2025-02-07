@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:17:07 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/05 14:38:56 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/02/07 14:54:42 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/02/07 15:01:38 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
+# endif
+
+# ifndef MAX_FD
+#  define MAX_FD 1024
 # endif
 
 char	*get_next_line(int fd);

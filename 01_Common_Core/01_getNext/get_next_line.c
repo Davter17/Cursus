@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 22:16:40 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/05 13:31:26 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:03:31 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ char	*extract_line(char *buffer)
 	int		i;
 	char	*line;
 
+	i = 0;
 	if (!buffer || !buffer[0])
 		return (NULL);
-	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = ft_substr(buffer, 0, i + (buffer[i] == '\n'));
@@ -70,38 +70,17 @@ char	*update_buffer(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[MAX_FD];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= MAX_FD || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!buffer)
-		buffer = ft_strdup("");
-	buffer = read_and_store(fd, buffer);
-	if (!buffer)
+	if (!buffer[fd])
+		buffer[fd] = ft_strdup("");
+	buffer[fd] = read_and_store(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = extract_line(buffer);
-	buffer = update_buffer(buffer);
+	line = extract_line(buffer[fd]);
+	buffer[fd] = update_buffer(buffer[fd]);
 	return (line);
 }
-
-/*
-#include <fcntl.h>
-#include <string.h>
-
-int main(void)
-{
-	int	fd;
-	char	*line;
-
-	fd = open("a.txt", O_RDONLY);
-	line = get_next_line(fd);
-	while (line)
-	{
-		write(1, line, strlen(line));
-		line = get_next_line(fd);
-	}
-	close(fd);
-	return (0);
-}
-*/

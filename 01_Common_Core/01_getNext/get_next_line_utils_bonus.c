@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 02:55:15 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/06 02:55:15 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:02:13 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (!(unsigned char)c)
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
