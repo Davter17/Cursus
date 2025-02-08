@@ -4,6 +4,8 @@
 		"stdlib.h": "c",
 		"libft.h": "c",
 		"unistd.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"get_next_line_bonus.h": "c",
+		"get_next_line.h": "c"
 	}
 }
