@@ -24,9 +24,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-void	sa(int *slot);
-void	sb(int *slot);
-void	ss(int *slot_a, int *slot_b);
+void	sa(t_list **slot);
+void	sb(t_list **slot);
+void	ss(t_list **slot_a, t_list **slot_b);
 void	pa(int *slot_a, int *slot_b);
 void	pb(int *slot_a, int *slot_b);
 void	ra(int *slot);

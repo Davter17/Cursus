@@ -12,37 +12,30 @@
 
 #include "push_swap.h"
 
-void	push(int *slot_in, int *slot_out)
+void	push(t_list **slot_in, t_list **slot_out)
 {
-	int	i;
+    t_list *temp;
 
-	if (slot_out[0])
-	{
-		i = 0;
-		while (slot_in[i])
-			i++;
-		while (i >= 0)
-		{
-			slot_in[i + 1] = slot_in[i];
-			i--;
-		}
-		slot_in[0] = slot_out[0];
-		i = 0;
-		while (slot_out[i])
-		{
-			slot_out[i] = slot_out[i + 1];
-			i++;
-		}
-	}
+    if (!slot_out || !*slot_out)
+        return;
+    temp = *slot_out;
+    *slot_out = temp->next;
+    if (*slot_out)
+        (*slot_out)->pre = NULL;
+    temp->next = *slot_in;
+    temp->pre = NULL;
+    if (*slot_in)
+        (*slot_in)->pre = temp;
+    *slot_in = temp;
 }
 
-void	pa(int *slot_a, int *slot_b)
+void	pa(t_list **slot_a, t_list **slot_b)
 {
 	push(slot_a, slot_b);
 	write(1, "pa\n", 3);
 }
 
-void	pb(int *slot_a, int *slot_b)
+void	pb(t_list **slot_a, t_list **slot_b)
 {
 	push(slot_b, slot_a);
 	write(1, "pb\n", 3);

@@ -12,31 +12,33 @@
 
 #include "push_swap.h"
 
-void	swap(int *slot)
+void	swap(t_list **slot)
 {
-	int	temp;
+	int		temp;
+	t_list	*ini;
 
-	if (slot[1])
+	ini = *slot;
+	if (ini->next)
 	{
-		temp = slot[1];
-		slot[1] = slot[0];
-		slot[0] = temp;
+		temp = ini->next->content;
+		ini->next->content = ini->content;
+		ini->content = temp;
 	}
 }
 
-void	sa(int *slot)
+void	sa(t_list **slot)
 {
 	swap(slot);
 	write(1, "sa\n", 3);
 }
 
-void	sb(int *slot)
+void	sb(t_list **slot)
 {
 	swap(slot);
 	write(1, "sb\n", 3);
 }
 
-void	ss(int *slot_a, int *slot_b)
+void	ss(t_list **slot_a, t_list **slot_b)
 {
 	swap(slot_a);
 	swap(slot_b);
