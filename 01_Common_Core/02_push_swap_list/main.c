@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/10 01:17:00 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/10 04:04:11 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,34 @@ void	print_list(t_list *head)
 	printf("\n");
 }
 
+void	solve_list(t_list *slot_a, t_list *slot_b)
+{
+	int		i;
+	int		count;
+	t_list	*slot_act;
+	
+	slot_act = slot_a;
+	count = 0;
+	while(slot_act->next)
+	{
+		if (slot_act->content > slot_act->next->content)
+		{
+			i = 0;
+			while (i++ < count)
+				pb(&slot_a, &slot_b);
+			sa(slot_a);
+			i = 0;
+			while (i++ < count)
+				pa(&slot_a, &slot_b);
+			slot_act = slot_a;
+			count = 0;
+			continue ;
+		}
+		slot_act = slot_act->next;
+		count++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*slot_a;
@@ -74,23 +102,9 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	print_list(slot_a);
-	sa(slot_a);
+	solve_list(slot_a, slot_b);
+	write(1, "\n\n", 2);
 	print_list(slot_a);
-	pb(&slot_a, &slot_b);
-	pb(&slot_a, &slot_b);
-	pb(&slot_a, &slot_b);
-	print_list(slot_a);
-	rr(slot_a, slot_b);
-	print_list(slot_a);
-	rrr(slot_a, slot_b);
-	print_list(slot_a);
-	sa(slot_a);
-	print_list(slot_a);
-	pa(&slot_a, &slot_b);
-	pa(&slot_a, &slot_b);
-	pa(&slot_a, &slot_b);
-	print_list(slot_a);
-	free(slot_a);
 	free(slot_b);
 	return (0);
 }
