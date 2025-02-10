@@ -6,43 +6,42 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/08 17:49:10 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/10 01:16:51 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(int *slot)
+void	rotate(t_list *slot)
 {
-	int	temp;
-	int	i;
+	t_list	*act;
+	int		temp;
 
-	if (slot[1])
+	if (!slot || !slot->next)
+		return ;
+	act = slot;
+	temp = act->content;
+	while (act->next)
 	{
-		i = 0;
-		temp = slot[0];
-		while (slot[i + 1])
-		{
-			slot[i] = slot[i + 1];
-			i++;
-		}
-		slot[i] = temp;
+		act->content = act->next->content;
+		act = act->next;
 	}
+	act->content = temp;
 }
 
-void	ra(int *slot)
+void	ra(t_list *slot)
 {
 	rotate(slot);
 	write(1, "ra\n", 3);
 }
 
-void	rb(int *slot)
+void	rb(t_list *slot)
 {
 	rotate(slot);
 	write(1, "rb\n", 3);
 }
 
-void	rr(int *slot_a, int *slot_b)
+void	rr(t_list *slot_a, t_list *slot_b)
 {
 	rotate(slot_a);
 	rotate(slot_b);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.utils.c                                  :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 17:59:17 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/08 19:54:17 by mpico-bu         ###   ########.fr       */
+/*   Created: 2024/12/04 21:20:49 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 02:32:22 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+// Converts the string `nptr` to an integer.
 
 int	ft_atoi(const char *nptr)
 {
@@ -38,16 +38,18 @@ int	ft_atoi(const char *nptr)
 }
 
 /*
-t_list	*ft_lstnew(t_list *prev, int *content)
-{
-	t_list	*new_node;
+#include <unistd.h>
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->pre = prev;
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+int main(void)
+{
+	const char	*nptr;
+	int			number;
+
+	nptr = "0";
+	number = ft_atoi(nptr);
+	write(1, &"0123456789"[number / 100 % 10], 1);
+	write(1, &"0123456789"[number / 10 % 10], 1);
+	write(1, &"0123456789"[number / 1 % 10], 1);
+	return (1);
 }
 */

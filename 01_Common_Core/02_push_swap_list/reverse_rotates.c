@@ -6,45 +6,44 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/08 17:49:01 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/10 00:39:44 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(int *slot)
+void	reverse_rotate(t_list *slot)
 {
-	int	temp;
-	int	i;
+	int		temp;
+	t_list	*act;
 
-	if (slot[1])
+	if (!slot || !slot->next)
+		return ;
+	act = slot;
+	while (act->next)
+		act = act->next;
+	temp = act->content;
+	while (act->pre)
 	{
-		i = 0;
-		while (slot[i + 1])
-			i++;
-		temp = slot[i];
-		while (slot[i - 1])
-		{
-			slot[i] = slot[i - 1];
-			i--;
-		}
-		slot[i] = temp;
+		act->content = act->pre->content;
+		act = act->pre;
 	}
+	act->content = temp;
 }
 
-void	rra(int *slot)
+void	rra(t_list *slot)
 {
 	reverse_rotate(slot);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(int *slot)
+void	rrb(t_list *slot)
 {
 	reverse_rotate(slot);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(int *slot_a, int *slot_b)
+void	rrr(t_list *slot_a, t_list *slot_b)
 {
 	reverse_rotate(slot_a);
 	reverse_rotate(slot_b);

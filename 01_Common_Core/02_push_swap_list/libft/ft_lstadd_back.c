@@ -1,48 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swaps.c                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 12:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/10 00:40:12 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/01/14 18:02:08 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/01/15 16:24:02 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	swap(t_list *slot)
+// Adds a new node at the end of the list.
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int		temp;
-	t_list	*act;
+	t_list	*lstlast;
 
-	if (!slot)
+	if (!lst || !new)
 		return ;
-	act = slot;
-	if (act->next)
+	if (*lst == NULL)
 	{
-		temp = act->next->content;
-		act->next->content = act->content;
-		act->content = temp;
+		*lst = new;
+		return ;
 	}
-}
-
-void	sa(t_list *slot)
-{
-	swap(slot);
-	write(1, "sa\n", 3);
-}
-
-void	sb(t_list *slot)
-{
-	swap(slot);
-	write(1, "sb\n", 3);
-}
-
-void	ss(t_list *slot_a, t_list *slot_b)
-{
-	swap(slot_a);
-	swap(slot_b);
-	write(1, "ss\n", 3);
+	lstlast = *lst;
+	while (lstlast->next != NULL)
+		lstlast = lstlast->next;
+	lstlast->next = new;
 }
