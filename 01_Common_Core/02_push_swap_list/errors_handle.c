@@ -1,48 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swaps.c                                            :+:      :+:    :+:   */
+/*   errors_handle.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 12:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 00:23:35 by mpico-bu         ###   ########.fr       */
+/*   Created: 2025/02/11 18:29:12 by mpico-bu          #+#    #+#             */
+/*   Updated: 2025/02/11 18:43:31 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(bi_t_list *slot)
+int check_argv(char **argv)
 {
-	int		temp;
-	bi_t_list	*act;
+	int     i;
+	int     j;
+	char    c;
 
-	if (!slot)
-		return ;
-	act = slot;
-	if (act->next)
+	i = 1;
+	while(argv[i])
 	{
-		temp = act->next->content;
-		act->next->content = act->content;
-		act->content = temp;
+		j = 0;
+		while(argv[i][j])
+		{
+			c = argv[i][j];
+			if (c != ' ' && c != '-' && (c <= '0' || c >= '9'))
+			{				
+				printf("Error\nOnly numbers accepted");
+				return (0);
+			}
+			j++;
+		}
+		i++;
 	}
-}
-
-void	sa(bi_t_list *slot)
-{
-	swap(slot);
-	write(1, "sa\n", 3);
-}
-
-void	sb(bi_t_list *slot)
-{
-	swap(slot);
-	write(1, "sb\n", 3);
-}
-
-void	ss(bi_t_list *slot_a, bi_t_list *slot_b)
-{
-	swap(slot_a);
-	swap(slot_b);
-	write(1, "ss\n", 3);
+	return (1);
 }

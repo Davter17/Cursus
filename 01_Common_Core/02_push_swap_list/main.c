@@ -6,37 +6,24 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/10 04:04:11 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:32:39 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew2(t_list *prev, int content)
-{
-	t_list	*new_node;
-
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->pre = prev;
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-int	generate_slot(t_list **slot_ini, int size, char **argv)
+int	generate_slot(bi_t_list **slot_ini, int size, char **argv)
 {
 	int		i;
-	t_list	*slot_act;
-	t_list	*slot_fut;
+	bi_t_list	*slot_act;
+	bi_t_list	*slot_fut;
 
-	*slot_ini = ft_lstnew2(NULL, atoi(argv[1]));
+	*slot_ini = bilst_new(NULL, atoi(argv[1]));
 	slot_act = *slot_ini;
 	i = 2;
 	while (i <= size)
 	{
-		slot_fut = ft_lstnew2(slot_act, atoi(argv[i]));
+		slot_fut = bilst_new(slot_act, atoi(argv[i]));
 		if (!slot_fut)
 			return (0);
 		slot_act->next = slot_fut;
@@ -46,65 +33,25 @@ int	generate_slot(t_list **slot_ini, int size, char **argv)
 	return (1);
 }
 
-void	print_list(t_list *head)
-{
-	t_list	*temp;
-
-	temp = head;
-	while (temp)
-	{
-		printf("%d ", temp->content);
-		temp = temp->next;
-	}
-	printf("\n");
-}
-
-void	solve_list(t_list *slot_a, t_list *slot_b)
-{
-	int		i;
-	int		count;
-	t_list	*slot_act;
-	
-	slot_act = slot_a;
-	count = 0;
-	while(slot_act->next)
-	{
-		if (slot_act->content > slot_act->next->content)
-		{
-			i = 0;
-			while (i++ < count)
-				pb(&slot_a, &slot_b);
-			sa(slot_a);
-			i = 0;
-			while (i++ < count)
-				pa(&slot_a, &slot_b);
-			slot_act = slot_a;
-			count = 0;
-			continue ;
-		}
-		slot_act = slot_act->next;
-		count++;
-	}
-}
-
 int	main(int argc, char **argv)
 {
-	t_list	*slot_a;
-	t_list	*slot_b;
+	bi_t_list	*slot_a;
+	bi_t_list	*slot_b;
 
 	slot_a = NULL;
 	slot_b = NULL;
 	if (argc < 2)
 		return (0);
+	if (check_argv(argv) == 0)
+		return (1);
 	if (generate_slot(&slot_a, argc - 1, argv) == 0)
 	{
-		printf("Error\nFallo en la asignación de memoria.\n");
+		ft_printf("Error\nFallo en la asignación de memoria.\n");
 		return (1);
 	}
-	print_list(slot_a);
+	bilst_print(slot_a);
 	solve_list(slot_a, slot_b);
-	write(1, "\n\n", 2);
-	print_list(slot_a);
+	bilst_print(slot_a);
 	free(slot_b);
 	return (0);
 }

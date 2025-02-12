@@ -6,13 +6,14 @@
 #    By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/10 00:43:56 by mpico-bu          #+#    #+#              #
-#    Updated: 2025/02/10 01:09:51 by mpico-bu         ###   ########.fr        #
+#    Updated: 2025/02/11 18:38:12 by mpico-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = main.c swaps.c pushes.c rotates.c  reverse_rotates.c
+SRCS = main.c list_controller.c swaps.c pushes.c rotates.c  reverse_rotates.c \
+		solve_logarithm.c errors_handle.c
 OBJS = $(SRCS:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
