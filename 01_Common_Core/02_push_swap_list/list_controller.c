@@ -6,17 +6,17 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:17:51 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 11:44:34 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/12 14:39:54 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bi_t_list	*bilst_new(bi_t_list *prev, int content)
+t_bilist	*bilst_new(t_bilist *prev, int content)
 {
-	bi_t_list	*new_node;
+	t_bilist	*new_node;
 
-	new_node = malloc(sizeof(bi_t_list));
+	new_node = malloc(sizeof(t_bilist));
 	if (!new_node)
 		return (NULL);
 	new_node->pre = prev;
@@ -25,7 +25,7 @@ bi_t_list	*bilst_new(bi_t_list *prev, int content)
 	return (new_node);
 }
 
-int	bilst_size(bi_t_list *lst)
+int	bilst_size(t_bilist *lst)
 {
 	int	counter;
 
@@ -38,7 +38,7 @@ int	bilst_size(bi_t_list *lst)
 	return (counter);
 }
 
-bi_t_list	*bilst_last(bi_t_list *lst)
+t_bilist	*bilst_last(t_bilist *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -47,16 +47,15 @@ bi_t_list	*bilst_last(bi_t_list *lst)
 	return (lst);
 }
 
-
-void	bilst_print(bi_t_list *head)
+void	bilst_print(t_bilist *head)
 {
-	bi_t_list	*temp;
+	t_bilist	*temp;
 
 	temp = head;
 	while (temp)
 	{
-		printf("%d ", temp->content);
+		ft_printf("%d ", temp->content);
 		temp = temp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }

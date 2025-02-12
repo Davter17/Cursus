@@ -6,16 +6,16 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 00:23:19 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/12 14:19:18 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(bi_t_list *slot)
+void	reverse_rotate(t_bilist *slot)
 {
-	int		temp;
-	bi_t_list	*act;
+	int			temp;
+	t_bilist	*act;
 
 	if (!slot || !slot->next)
 		return ;
@@ -31,19 +31,19 @@ void	reverse_rotate(bi_t_list *slot)
 	act->content = temp;
 }
 
-void	rra(bi_t_list *slot)
+void	rra(t_bilist *slot)
 {
 	reverse_rotate(slot);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(bi_t_list *slot)
+void	rrb(t_bilist *slot)
 {
 	reverse_rotate(slot);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(bi_t_list *slot_a, bi_t_list *slot_b)
+void	rrr(t_bilist *slot_a, t_bilist *slot_b)
 {
 	reverse_rotate(slot_a);
 	reverse_rotate(slot_b);

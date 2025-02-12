@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:27:11 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 11:44:42 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:08:30 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,33 @@
 # include "libft/libft.h"
 # include "libft/ft_printf.h"
 
-typedef struct bi_s_list
+typedef struct s_bilist
 {
-	struct bi_s_list	*pre;
+	struct s_bilist	*pre;
 	int				content;
-	struct bi_s_list	*next;
-}	bi_t_list;
+	struct s_bilist	*next;
+}	t_bilist;
 
-int			generate_slot(bi_t_list **slot_ini, int size, char **argv);
-int			check_argv(char **argv);
+int			generate_slot(t_bilist **slot_ini, int size, char **argv);
+int			check_argv(int argc, char **argv);
 
-void		sa(bi_t_list *slot);
-void		sb(bi_t_list *slot);
-void		ss(bi_t_list *slot_a, bi_t_list *slot_b);
-void		pa(bi_t_list **slot_a, bi_t_list **slot_b);
-void		pb(bi_t_list **slot_a, bi_t_list **slot_b);
-void		ra(bi_t_list *slot);
-void		rb(bi_t_list *slot);
-void		rr(bi_t_list *slot_a, bi_t_list *slot_b);
-void		rra(bi_t_list *slot);
-void		rrb(bi_t_list *slot);
-void		rrr(bi_t_list *slot_a, bi_t_list *slot_b);
+void		sa(t_bilist *slot);
+void		sb(t_bilist *slot);
+void		ss(t_bilist *slot_a, t_bilist *slot_b);
+void		pa(t_bilist **slot_a, t_bilist **slot_b);
+void		pb(t_bilist **slot_a, t_bilist **slot_b);
+void		ra(t_bilist *slot);
+void		rb(t_bilist *slot);
+void		rr(t_bilist *slot_a, t_bilist *slot_b);
+void		rra(t_bilist *slot);
+void		rrb(t_bilist *slot);
+void		rrr(t_bilist *slot_a, t_bilist *slot_b);
 
-bi_t_list	*bilst_new(bi_t_list *prev, int content);
-int			bilst_size(bi_t_list *lst);
-bi_t_list	*bilst_last(bi_t_list *lst);
-void		bilst_print(bi_t_list *head);
+t_bilist	*bilst_new(t_bilist *prev, int content);
+int			bilst_size(t_bilist *lst);
+t_bilist	*bilst_last(t_bilist *lst);
+void		bilst_print(t_bilist *head);
 
-void		solve_list(bi_t_list *slot_a, bi_t_list *slot_b);
+void		solve_list(t_bilist *slot_a, t_bilist *slot_b);
 
 #endif

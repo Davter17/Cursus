@@ -6,16 +6,16 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 00:23:35 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/12 14:19:32 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(bi_t_list *slot)
+void	swap(t_bilist *slot)
 {
-	int		temp;
-	bi_t_list	*act;
+	int			temp;
+	t_bilist	*act;
 
 	if (!slot)
 		return ;
@@ -28,19 +28,19 @@ void	swap(bi_t_list *slot)
 	}
 }
 
-void	sa(bi_t_list *slot)
+void	sa(t_bilist *slot)
 {
 	swap(slot);
 	write(1, "sa\n", 3);
 }
 
-void	sb(bi_t_list *slot)
+void	sb(t_bilist *slot)
 {
 	swap(slot);
 	write(1, "sb\n", 3);
 }
 
-void	ss(bi_t_list *slot_a, bi_t_list *slot_b)
+void	ss(t_bilist *slot_a, t_bilist *slot_b)
 {
 	swap(slot_a);
 	swap(slot_b);
