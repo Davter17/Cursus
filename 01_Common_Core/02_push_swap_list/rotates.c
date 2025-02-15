@@ -6,15 +6,15 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 14:19:21 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/14 13:54:50 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_bilist *slot)
+void	rotate(t_node *slot)
 {
-	t_bilist	*act;
+	t_node	*act;
 	int			temp;
 
 	if (!slot || !slot->next)
@@ -29,19 +29,20 @@ void	rotate(t_bilist *slot)
 	act->content = temp;
 }
 
-void	ra(t_bilist *slot)
+void	ra(t_node *slot)
 {
 	rotate(slot);
 	write(1, "ra\n", 3);
+	bilst_print(slot);
 }
 
-void	rb(t_bilist *slot)
+void	rb(t_node *slot)
 {
 	rotate(slot);
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_bilist *slot_a, t_bilist *slot_b)
+void	rr(t_node *slot_a, t_node *slot_b)
 {
 	rotate(slot_a);
 	rotate(slot_b);

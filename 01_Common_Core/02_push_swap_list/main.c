@@ -6,17 +6,17 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 17:21:16 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/14 13:54:32 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	generate_slot(t_bilist **slot_ini, int size, char **argv)
+int	generate_slot(t_node **slot_ini, int size, char **argv)
 {
 	int			i;
-	t_bilist	*slot_act;
-	t_bilist	*slot_fut;
+	t_node	*slot_act;
+	t_node	*slot_fut;
 
 	*slot_ini = bilst_new(NULL, ft_atoi(argv[1]));
 	if (!slot_ini)
@@ -37,17 +37,17 @@ int	generate_slot(t_bilist **slot_ini, int size, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_bilist	*slot_a;
-	t_bilist	*slot_b;
+	t_node	*slot_a;
+	t_node	*slot_b;
 
 	slot_a = NULL;
 	slot_b = NULL;
 	if (argc < 2)
 		return (0);
 	if (check_argv(argc, argv) == 0)
-		return (1);
+		return (fprintf(stderr, "Error\n"), 1);
 	if (generate_slot(&slot_a, argc - 1, argv) == 0)
-		return (1);
+		return (fprintf(stderr, "Error\n"), 1);
 	solve_list(slot_a, slot_b);
 	free(slot_b);
 	return (0);

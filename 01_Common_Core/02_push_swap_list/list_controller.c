@@ -6,17 +6,17 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:17:51 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/12 14:39:54 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/02/14 13:54:22 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_bilist	*bilst_new(t_bilist *prev, int content)
+t_node	*bilst_new(t_node *prev, int content)
 {
-	t_bilist	*new_node;
+	t_node	*new_node;
 
-	new_node = malloc(sizeof(t_bilist));
+	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->pre = prev;
@@ -25,7 +25,7 @@ t_bilist	*bilst_new(t_bilist *prev, int content)
 	return (new_node);
 }
 
-int	bilst_size(t_bilist *lst)
+int	bilst_size(t_node *lst)
 {
 	int	counter;
 
@@ -38,7 +38,7 @@ int	bilst_size(t_bilist *lst)
 	return (counter);
 }
 
-t_bilist	*bilst_last(t_bilist *lst)
+t_node	*bilst_last(t_node *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -47,9 +47,37 @@ t_bilist	*bilst_last(t_bilist *lst)
 	return (lst);
 }
 
-void	bilst_print(t_bilist *head)
+int	bilst_max(t_node *lst)
 {
-	t_bilist	*temp;
+	int	max;
+
+	max = lst->content;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (max < lst->content)
+			max = lst->content;
+	}
+	return (max);
+}
+
+int	bilst_min(t_node *lst)
+{
+	int	min;
+
+	min = lst->content;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (min > lst->content)
+			min = lst->content;
+	}
+	return (min);
+}
+
+void	bilst_print(t_node *head)
+{
+	t_node	*temp;
 
 	temp = head;
 	while (temp)

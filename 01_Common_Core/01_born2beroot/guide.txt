@@ -28,7 +28,7 @@ SUDO CONFIGURATION AND LOGGING
 
 nano /etc/sudoers.d/sudo_config     # Shows custom sudo configuration
 which sudo							# Checks if sudo is installed
-dpkg -s sudo						# Checks sudo package details
+dpkg -s sudo						# Checks slibftudo package details
 ls /var/log/sudo/					# Checks sudo logs directory
 cat /var/log/sudo/sudo.log			# Displays sudo command logs
 
