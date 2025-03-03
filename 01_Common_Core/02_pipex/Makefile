@@ -6,13 +6,13 @@
 #    By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/10 00:43:56 by mpico-bu          #+#    #+#              #
-#    Updated: 2025/02/15 17:31:12 by mpico-bu         ###   ########.fr        #
+#    Updated: 2025/03/03 13:06:21 by mpico-bu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-SRCS = main.c
+SRCS = main.c find_executable.c child_process.c
 OBJS = $(SRCS:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra

@@ -1,3 +1,0 @@
-00_Piscine
-01_Common_Core
-libft
