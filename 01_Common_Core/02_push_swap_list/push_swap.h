@@ -6,16 +6,17 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:27:11 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/14 13:57:24 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:54:09 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdbool.h>
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <stdbool.h>
 # include <unistd.h>
 # include "libft/libft.h"
 # include "libft/ft_printf.h"
@@ -27,9 +28,10 @@ typedef struct s_node
 	int				cost;
 	bool			cheapest;
 	bool			ra;
+	
 	struct s_node	*pre;
 	struct s_node	*next;
-	struct s_node	*first;
+	struct s_node	*first_node;
 }	t_node;
 
 int			generate_slot(t_node **slot_ini, int size, char **argv);

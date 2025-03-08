@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/14 13:55:00 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:14:31 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	swap(t_node *slot)
 	act = slot;
 	if (act->next)
 	{
-		temp = act->next->content;
-		act->next->content = act->content;
-		act->content = temp;
+		temp = act->next->value;
+		act->next->value = act->value;
+		act->value = temp;
 	}
 }
 

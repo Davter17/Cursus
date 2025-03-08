@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/14 13:54:50 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:26:45 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@ void	rotate(t_node *slot)
 	if (!slot || !slot->next)
 		return ;
 	act = slot;
-	temp = act->content;
+	temp = act->value;
 	while (act->next)
 	{
-		act->content = act->next->content;
+		act->value = act->next->value;
 		act = act->next;
 	}
-	act->content = temp;
+	act->value = temp;
 }
 
 void	ra(t_node *slot)
 {
 	rotate(slot);
 	write(1, "ra\n", 3);
-	bilst_print(slot);
 }
 
 void	rb(t_node *slot)

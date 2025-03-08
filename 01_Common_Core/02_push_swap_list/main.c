@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/14 13:54:32 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:55:33 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	slot_a = NULL;
 	slot_b = NULL;
 	if (argc < 2)
-		return (0);
+		return (1);
 	if (check_argv(argc, argv) == 0)
 		return (fprintf(stderr, "Error\n"), 1);
 	if (generate_slot(&slot_a, argc - 1, argv) == 0)

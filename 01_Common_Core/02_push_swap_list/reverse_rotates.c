@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:14:34 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/02/14 13:54:46 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:26:40 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,19 @@ void	reverse_rotate(t_node *slot)
 	act = slot;
 	while (act->next)
 		act = act->next;
-	temp = act->content;
+	temp = act->value;
 	while (act->pre)
 	{
-		act->content = act->pre->content;
+		act->value = act->pre->value;
 		act = act->pre;
 	}
-	act->content = temp;
+	act->value = temp;
 }
 
 void	rra(t_node *slot)
 {
 	reverse_rotate(slot);
 	write(1, "rra\n", 4);
-	bilst_print(slot);
 }
 
 void	rrb(t_node *slot)
