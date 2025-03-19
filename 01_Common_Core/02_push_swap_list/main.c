@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:38:58 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/03/08 13:55:33 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/16 05:50:36 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 		return (fprintf(stderr, "Error\n"), 1);
 	if (generate_slot(&slot_a, argc - 1, argv) == 0)
 		return (fprintf(stderr, "Error\n"), 1);
-	solve_list(slot_a, slot_b);
+	solve_list(&slot_a, &slot_b);
 	free(slot_b);
 	return (0);
 }

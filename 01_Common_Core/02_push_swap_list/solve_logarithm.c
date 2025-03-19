@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:59:03 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/03/08 14:21:16 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/16 05:52:57 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,9 @@ void	solve_list(t_node *slot_a, t_node *slot_b)
 		pb(&slot_a, &slot_b);
 	}
 	solve_last_three(slot_a);
+	write(1, "1\n", 2);
 	slot_a = solve_third_pass(slot_a, slot_b);
+	write(1, "1\n", );
 	solve_last_pass(slot_a, min);
-	bilst_print(slot_a);
+	//bilst_print(slot_a);
 }

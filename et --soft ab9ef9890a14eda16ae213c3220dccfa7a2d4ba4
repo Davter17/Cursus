@@ -1,0 +1,263 @@
+[33mcommit b53e982229593660b619e7cb0937faba957dd57f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mario Pico Busquier <mpico-bu@c1r1s3.42madrid.com>
+Date:   Mon Mar 3 14:33:31 2025 +0100
+
+    delivery
+
+[33mcommit ab9ef9890a14eda16ae213c3220dccfa7a2d4ba4[m
+Author: Mario Pico Busquier <mpico-bu@c1r3s5.42madrid.com>
+Date:   Sun Feb 23 20:02:40 2025 +0100
+
+    early finish
+
+[33mcommit 1fb12c29f7f540fb26530f427f6e5171818adf1f[m
+Author: Mario Pico Busquier <mpico-bu@c1r6s4.42madrid.com>
+Date:   Fri Feb 21 15:19:07 2025 +0100
+
+    HATE
+
+[33mcommit 82d4232947c1f0dd8a3c1d81bbd5ddf894a2f8db[m
+Author: Mario Pico Busquier <mpico-bu@c2r15s2.42madrid.com>
+Date:   Mon Feb 17 05:26:45 2025 +0100
+
+    fixing prohibited function
+
+[33mcommit 81f90957390d1f2da874b271908f103265f79bf0[m
+Author: Mario Pico Busquier <mpico-bu@c3r11s5.42madrid.com>
+Date:   Sun Feb 16 16:38:41 2025 +0100
+
+    pipex
+
+[33mcommit 5052a0f09e02407714f6f5493611003422e72d79[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s1.42madrid.com>
+Date:   Sat Feb 15 19:23:38 2025 +0100
+
+    pipex.v1
+
+[33mcommit 48958d2735bfa766c137ccb70740340a4c28c5c9[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s2.42madrid.com>
+Date:   Wed Feb 12 17:25:49 2025 +0100
+
+    handling errors
+
+[33mcommit 103494a9ce008f0bb001a73597c1ed1629a09699[m
+Author: Mario Pico Busquier <mpico-bu@c2r15s5.42madrid.com>
+Date:   Wed Feb 12 13:38:53 2025 +0100
+
+    push_swap_functional
+
+[33mcommit e98a8bb26e7a2df8c0dc8ae0333142ecb570f9ae[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s4.42madrid.com>
+Date:   Mon Feb 10 04:04:42 2025 +0100
+
+    first solve
+
+[33mcommit 3014f513425bfa85976960968dedd3fc386410e6[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s4.42madrid.com>
+Date:   Mon Feb 10 01:22:22 2025 +0100
+
+    push_swap makefile
+
+[33mcommit 49712fd73f5385e534c4f3c9fc0bfad4eb1d48ad[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Sun Feb 9 19:31:00 2025 +0100
+
+    converting push swap into size_t
+
+[33mcommit 98c02c8509cd82e6eedf1c33d584a16ac71b55ab[m
+Author: Mario Pico Busquier <mpico-bu@c1r7s4.42madrid.com>
+Date:   Sat Feb 8 20:57:26 2025 +0100
+
+    ini push swap
+
+[33mcommit f997cb9037f79c95888283eb521e57cbfd578071[m
+Author: Mario Pico Busquier <mpico-bu@c1r7s4.42madrid.com>
+Date:   Sat Feb 8 20:54:25 2025 +0100
+
+    init push swap
+
+[33mcommit 93d0bdeca738640d23928c792e98e3efe87c0d6b[m
+Author: Mario Pico Busquier <mpico-bu@c3r14s4.42madrid.com>
+Date:   Fri Feb 7 15:05:12 2025 +0100
+
+    finish get_next_line
+
+[33mcommit ed2693e4ce755770c93781bc563cab730a80e42f[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Thu Feb 6 02:56:02 2025 +0100
+
+    new try
+
+[33mcommit 24eee45963e2d35e96cef5b361118b686e66fad6[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s3.42madrid.com>
+Date:   Wed Feb 5 15:01:12 2025 +0100
+
+    bonus
+
+[33mcommit a0a9b7b29a2d1a67bffdbceceaa945cede323900[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s3.42madrid.com>
+Date:   Wed Feb 5 12:10:54 2025 +0100
+
+    getNext paco
+
+[33mcommit c671bea91d8340d903e219bda4492cb9bbbbab56[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s6.42madrid.com>
+Date:   Tue Feb 4 23:29:07 2025 +0100
+
+    getNextLine
+
+[33mcommit 993bb00d702613f4092b8e110bef1ba0ff0c523b[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s1.42madrid.com>
+Date:   Tue Feb 4 22:40:49 2025 +0100
+
+    born2beRoot
+
+[33mcommit 53269ee364d942ae743c72f9ccee298d7d7f7234[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s1.42madrid.com>
+Date:   Fri Jan 24 19:42:17 2025 +0100
+
+    updated gln
+
+[33mcommit 6897df9c0ae997483c470663d26d58a9905ad130[m
+Author: Mario Pico Busquier <mpico-bu@c2r16s4.42madrid.com>
+Date:   Fri Jan 24 11:34:44 2025 +0100
+
+    get_next
+
+[33mcommit 14b18d5b630361a11d2dcf40ab78f4aa95666f8d[m
+Author: Mario Pico Busquier <mpico-bu@c2r18s3.42madrid.com>
+Date:   Wed Jan 22 16:07:08 2025 +0100
+
+    include libft
+
+[33mcommit 9983973687a130dac856ff6a79050c102003455a[m
+Author: Mario Pico Busquier <mpico-bu@c2r18s3.42madrid.com>
+Date:   Wed Jan 22 16:06:27 2025 +0100
+
+    libft
+
+[33mcommit f267b6431d3c200699959403e2252e5e2e7cebc1[m
+Author: Mario Pico Busquier <mpico-bu@c2r18s3.42madrid.com>
+Date:   Wed Jan 22 16:05:47 2025 +0100
+
+    remove libft
+
+[33mcommit 40ed5159538e355c285b512f167a25929e22105f[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s4.42madrid.com>
+Date:   Wed Jan 22 14:01:49 2025 +0100
+
+    ft_printf
+
+[33mcommit ca77b7afa79674780403b9cf8ec319f829927cf8[m
+Author: Mario Pico Busquier <mpico-bu@c2r7s3.42madrid.com>
+Date:   Tue Jan 21 21:08:16 2025 +0100
+
+    libft.h
+
+[33mcommit 8547af7da72376958e0fd4670df5174b9cc692c1[m
+Author: Mario Pico Busquier <mpico-bu@c2r9s1.42madrid.com>
+Date:   Wed Jan 15 16:29:14 2025 +0100
+
+    fixing getNext
+
+[33mcommit 6f3c3248b74d2ce0331ba585a4d64f884381eb1f[m
+Author: Mario Pico Busquier <mpico-bu@c2r9s1.42madrid.com>
+Date:   Wed Jan 15 16:28:44 2025 +0100
+
+    finish
+
+[33mcommit f8f5f21fa1f5217a9f29f0ad8af76c4220036422[m
+Author: Mario Pico Busquier <mpico-bu@c2r17s2.42madrid.com>
+Date:   Tue Jan 14 21:57:19 2025 +0100
+
+    update
+
+[33mcommit 84397f093f4d8528595f0b33f8a1687d2feb14f6[m
+Author: Mario Pico Busquier <mpico-bu@c2r15s3.42madrid.com>
+Date:   Tue Jan 14 20:14:42 2025 +0100
+
+    finish bonus
+
+[33mcommit a4fdd79c353a9554f33d154ff37d9c56ca800dec[m
+Author: Mario Pico Busquier <mpico-bu@c2r15s1.42madrid.com>
+Date:   Tue Jan 14 17:52:54 2025 +0100
+
+    starting bonus
+
+[33mcommit 94cd5991590d6e1dccd2b6448598340f6343c0ea[m
+Author: Mario Pico Busquier <mpico-bu@c2r14s4.42madrid.com>
+Date:   Tue Jan 14 13:50:55 2025 +0100
+
+    excluding pdf
+
+[33mcommit 29a660ab3006503ce735868a11baf76baab133cd[m
+Author: Mario Pico Busquier <mpico-bu@c2r14s4.42madrid.com>
+Date:   Tue Jan 14 13:49:51 2025 +0100
+
+    comment functions
+
+[33mcommit e370ffe0c82ab97ef1466176ce8b8d34c41b9b77[m
+Author: Mario Pico Busquier <mpico-bu@c2r12s1.42madrid.com>
+Date:   Mon Jan 13 19:22:50 2025 +0100
+
+    remove pdf
+
+[33mcommit 49d3a18e8657a432b2c6845b00b21cdffe01c6ce[m
+Author: Mario Pico Busquier <mpico-bu@c2r8s1.42madrid.com>
+Date:   Mon Jan 13 16:34:11 2025 +0100
+
+    fixing errors paco
+
+[33mcommit d26eb5566d9d9a58674a1c41e703ecc32c5e8ee9[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Sat Jan 4 19:47:25 2025 +0100
+
+    saved change pc
+
+[33mcommit 3a93a68ab806f6f0fc3bbe4bf6a004d62ca8237d[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Sun Dec 15 21:48:40 2024 +0100
+
+    aditional functions
+
+[33mcommit ea058e82c21a378e1568243bf101ac41f5d7cdc6[m
+Author: root <root@Davter.localdomain>
+Date:   Sun Dec 15 21:47:34 2024 +0100
+
+    aditional functions
+
+[33mcommit 9fedc30a94dd51363048569c56d899840e044fc2[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Sun Dec 15 20:03:53 2024 +0100
+
+    go on
+
+[33mcommit be68543873e29c42c3d332d9a4ce7a194c1dec6b[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Wed Dec 4 22:07:43 2024 +0100
+
+    solve libft.h
+
+[33mcommit c51387f5ab2a31d5b36a7a0b53fa7e1428c637f1[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Wed Dec 4 21:37:49 2024 +0100
+
+    Libft must
+
+[33mcommit dad058008d69a97a34b7bf1d378b5aa8adf2d57b[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Wed Dec 4 16:47:38 2024 +0100
+
+    solving marvin error
+
+[33mcommit d119806318b18e6ec9e89d1ea06113c89fdc00ce[m
+Author: root <root@Davter.localdomain>
+Date:   Wed Dec 4 16:46:48 2024 +0100
+
+    Libft make
+
+[33mcommit b9ed151dd15251344e438d325280e1d725f2520b[m
+Author: Davter <mario.pico.busquier@gmail.com>
+Date:   Wed Dec 4 16:26:43 2024 +0100
+
+    pushing Piscine

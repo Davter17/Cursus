@@ -6,7 +6,7 @@
 /*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:27:11 by mpico-bu          #+#    #+#             */
-/*   Updated: 2025/03/08 13:54:09 by mpico-bu         ###   ########.fr       */
+/*   Updated: 2025/03/16 05:50:10 by mpico-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int			bilst_min(t_node *lst);
 int			bilst_max(t_node *lst);
 void		bilst_print(t_node *head);
 
-void		solve_list(t_node *slot_a, t_node *slot_b);
+void 		solve_list(t_node **slot_a, t_node **slot_b);
 
 #endif
