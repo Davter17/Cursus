@@ -105,6 +105,7 @@ void	ft_rush02(char *file_name, char *number)
 	if (ft_str_is_numeric(number) == 0)
 	{
 		write(1, "Error\n", 6);
+		free_dict(dict);
 		return ;
 	}
 	ft_process_number(dict, number);

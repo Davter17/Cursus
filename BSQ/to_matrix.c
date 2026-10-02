@@ -35,6 +35,7 @@ char	**allocate_matrix(int *matrix_size)
 		}
 		i++;
 	}
+	matrix[i] = NULL;
 	return (matrix);
 }
 

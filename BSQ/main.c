@@ -17,6 +17,7 @@
 #define MAP_SIZE 2048
 
 int		process_map2(char *file_name);
+int		process_stdin(void);
 int		allocate_resources(char **map, char **parameters, int **start);
 int		read_and_validate_map(char *file_name, char *map);
 int		process_matrix(char *map, char **parameters, int **start);
@@ -42,10 +43,12 @@ int	main(int argc, char **argv)
 		while (argv[i])
 		{
 			if (!process_map2(argv[i]))
-				write(1, "map error\n\n", 11);
+				write(1, "map error\n", 10);
 			i++;
 		}
 	}
+	else
+		process_stdin();
 	return (0);
 }
 

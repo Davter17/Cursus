@@ -65,14 +65,45 @@ int	process_map2(char *file_name)
 		return (0);
 	if (!read_and_validate_map(file_name, map))
 	{
+		free_resources1(map, NULL, NULL);
 		free_resources2(parameters, start);
 		return (0);
 	}
 	if (!process_matrix(map, &parameters, &start))
 	{
+		free_resources1(map, NULL, NULL);
 		free_resources2(parameters, start);
 		return (0);
 	}
+	free_resources1(map, NULL, NULL);
+	free_resources2(parameters, start);
+	return (1);
+}
+
+int	process_stdin(void)
+{
+	char	*map;
+	char	*parameters;
+	int		*start;
+	int		bytes_read;
+
+	if (!allocate_resources(&map, &parameters, &start))
+		return (0);
+	bytes_read = read(0, map, MAP_SIZE - 1);
+	if (bytes_read <= 0)
+	{
+		free_resources1(map, NULL, NULL);
+		free_resources2(parameters, start);
+		return (0);
+	}
+	map[bytes_read] = '\0';
+	if (!process_matrix(map, &parameters, &start))
+	{
+		free_resources1(map, NULL, NULL);
+		free_resources2(parameters, start);
+		return (0);
+	}
+	free_resources1(map, NULL, NULL);
 	free_resources2(parameters, start);
 	return (1);
 }
@@ -88,20 +119,17 @@ int	process_matrix(char *map, char **parameters, int **start)
 	matrix = ft_map_to_matrix(map, mat_size);
 	if (!matrix)
 	{
-		free(mat_size);
+		free_resources1(NULL, mat_size, NULL);
 		return (0);
 	}
 	if (!ft_read_parameters(map, *parameters))
 	{
-		free(mat_size);
 		free_resources1(NULL, mat_size, matrix);
-		free_resources2(*parameters, *start);
 		return (0);
 	}
 	*start = ft_solve_square(matrix, *start, mat_size, *parameters);
 	matrix = ft_fill_square(matrix, *start, *parameters);
 	ft_print_matrix(matrix, mat_size);
 	free_resources1(NULL, mat_size, matrix);
-	free_resources2(*parameters, *start);
 	return (1);
 }
