@@ -1,59 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpico-bu <mpico-bu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 18:00:00 by mpico-bu          #+#    #+#             */
+/*   Updated: 2024/11/19 18:00:00 by mpico-bu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	print_solution(int *board, int col) {
-	char c = board[col] + '0';
-	write(1, &c, 1);
-	if (col == 9) {
-		write(1, "$\n", 2);
-	} else {
-		print_solution(board, col + 1);
+void	ft_print_board(int *board)
+{
+	int		i;
+	char	c;
+
+	i = 0;
+	while (i < 10)
+	{
+		c = board[i] + '0';
+		write(1, &c, 1);
+		i++;
 	}
-}
-
-int	place_queen(int *board, int col, int *cols, int *diag1, int *diag2) {
-	if (col == 10) {
-		print_solution(board, 0);
-		return 1;
-	}
-	int count = 0;
-	count += try_rows(board, col, cols, diag1, diag2, 0);
-	return count;
-}
-
-int	try_rows(int *board, int col, int *cols, int *diag1, int *diag2, int row) {
-	if (row == 10) return 0;
-	int count = 0;
-	if (cols[row] || diag1[row - col + 9] || diag2[row + col]) {
-		count += try_rows(board, col, cols, diag1, diag2, row + 1);
-	} else {
-		board[col] = row;
-		cols[row] = 1;
-		diag1[row - col + 9] = 1;
-		diag2[row + col] = 1;
-		count += place_queen(board, col + 1, cols, diag1, diag2);
-		cols[row] = 0;
-		diag1[row - col + 9] = 0;
-		diag2[row + col] = 0;
-		count += try_rows(board, col, cols, diag1, diag2, row + 1);
-	}
-	return count;
-}
-
-int	ft_ten_queens_puzzle(void) {
-	int board[10] = {0};
-	int cols[10] = {0};
-	int diag1[19] = {0};
-	int diag2[19] = {0};
-	return place_queen(board, 0, cols, diag1, diag2);
-}
-
-int	main(void) {
-	char c;
-	int solutions = ft_ten_queens_puzzle();
-	c = solutions / 10 + '0';
-	write(1, &c, 1);
-	c = solutions % 10 + '0';
-	write(1, &c, 1);
 	write(1, "\n", 1);
-	return 0;
 }
+
+int	ft_is_safe(int *board, int col, int row)
+{
+	int	i;
+
+	i = 0;
+	while (i < col)
+	{
+		if (board[i] == row)
+			return (0);
+		if (board[i] - i == row - col)
+			return (0);
+		if (board[i] + i == row + col)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_solve(int *board, int col)
+{
+	int	row;
+	int	count;
+
+	count = 0;
+	if (col == 10)
+	{
+		ft_print_board(board);
+		return (1);
+	}
+	row = 0;
+	while (row < 10)
+	{
+		if (ft_is_safe(board, col, row))
+		{
+			board[col] = row;
+			count += ft_solve(board, col + 1);
+		}
+		row++;
+	}
+	return (count);
+}
+
+int	ft_ten_queens_puzzle(void)
+{
+	int	board[10];
+	int	i;
+
+	i = 0;
+	while (i < 10)
+	{
+		board[i] = -1;
+		i++;
+	}
+	return (ft_solve(board, 0));
+}
+
+/*
+int	main(void)
+{
+	int	solutions;
+
+	solutions = ft_ten_queens_puzzle();
+	return (0);
+}
+*/

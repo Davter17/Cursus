@@ -13,12 +13,6 @@
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(value) \
-({ \
-	int nb = value; \
-	if (nb < 0){ \
-		nb = -nb; \
-	} nb; \
-})
+int	ft_abs(int value);
 
 #endif

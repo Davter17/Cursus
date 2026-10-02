@@ -10,127 +10,103 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	count_splits(char *str, char *charset)
+int	ft_is_separator(char c, char *charset)
 {
 	int	i;
-	int	j;
-	int	counter;
 
 	i = 0;
-	counter = 1;
+	while (charset[i])
+	{
+		if (c == charset[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_count_words(char *str, char *charset)
+{
+	int	i;
+	int	count;
+	int	in_word;
+
+	i = 0;
+	count = 0;
+	in_word = 0;
 	while (str[i])
 	{
-		j = 0;
-		while (charset[j])
+		if (ft_is_separator(str[i], charset))
+			in_word = 0;
+		else if (!in_word)
 		{
-			if (str[i] == charset[j])
-			{
-				counter++;
-				break ;
-			}
-			j++;
+			in_word = 1;
+			count++;
 		}
 		i++;
 	}
-	return (counter);
+	return (count);
 }
 
-int	*calculate_len(char *str, char *charset, int splits, char **matrix)
+int	ft_word_len(char *str, char *charset)
 {
 	int	i;
-	int	j;
-	int	*size_splits;
-	int	size_split_position;
-	int	size_split_counter;
 
 	i = 0;
-	size_split_position = 0;
-	size_split_counter = 0;
-	size_splits = malloc(splits * sizeof(int));
-	while (str[i])
-	{
-		j = 0;
-		while (charset[j])
-		{
-			if (str[i] == charset[j])
-			{
-				if (size_split_counter > 0)
-					size_splits[size_split_position++] = size_split_counter;
-				size_split_counter = 0;
-			}
-			j++;
-		}
-		size_split_counter++;
+	while (str[i] && !ft_is_separator(str[i], charset))
 		i++;
-	}
-	if (size_split_counter > 0)
-		size_splits[size_split_position] = size_split_counter;
-	return (size_splits);
+	return (i);
 }
 
-char	**ft_allocate_split(char *str, char *charset)
+char	*ft_strdup_word(char *str, char *charset)
 {
-	char	**matrix;
-	int		splits;
+	char	*word;
+	int		len;
 	int		i;
-	int		*len_to_splits;
 
-	splits = count_splits(str, charset);
-	matrix = malloc((splits + 1) * sizeof(char *));
-	if (!matrix)
-		return (NULL);
-	len_to_splits = calculate_len(str, charset, splits, matrix);
-	if (!len_to_splits)
+	len = ft_word_len(str, charset);
+	word = (char *)malloc((len + 1) * sizeof(char));
+	if (!word)
 		return (NULL);
 	i = 0;
-	while (i < splits)
+	while (i < len)
 	{
-		matrix[i] = malloc(len_to_splits[i] * sizeof(char));
-		if (!matrix[i])
-			return (NULL);
+		word[i] = str[i];
 		i++;
 	}
-	matrix[splits] = NULL;
-	free(len_to_splits);
-	return (matrix);
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**matrix;
+	char	**result;
 	int		i;
 	int		j;
-	int		k;
+	int		words;
 
+	words = ft_count_words(str, charset);
+	result = (char **)malloc((words + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
 	i = 0;
 	j = 0;
-	matrix = ft_allocate_split(str, charset);
-	if (!matrix)
-		return (NULL);
-	while (str[i])
+	while (j < words)
 	{
-		k = 0;
-		while (charset[j])
-		{
-			if (str[i] == charset[j])
-			{
-				j++;
-				k = 0;
-			}
-			else
-			{
-				matrix[j][k] = str[i];
-				k++;
-			}
+		while (str[i] && ft_is_separator(str[i], charset))
 			i++;
-		}
+		result[j] = ft_strdup_word(&str[i], charset);
+		if (!result[j])
+			return (NULL);
+		i += ft_word_len(&str[i], charset);
+		j++;
 	}
-	matrix[j] = NULL;
-	return (matrix);
+	result[j] = NULL;
+	return (result);
 }
 
+/*
 int	main(int argc, char **argv)
 {
 	char	**matrix;
@@ -139,3 +115,4 @@ int	main(int argc, char **argv)
 		matrix = ft_split(argv[1], argv[2]);
 	return (0);
 }
+*/
