@@ -18,8 +18,10 @@ void	ft_putchar(char c)
 	return ;
 }
 
+/*
 int	main(void)
 {
 	ft_putchar('d');
 	return (0);
 }
+*/

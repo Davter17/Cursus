@@ -54,8 +54,10 @@ void	ft_print_comb(void)
 	return ;
 }
 
+/*
 int	main(void)
 {
 	ft_print_comb();
 	return (0);
 }
+*/

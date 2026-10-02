@@ -33,15 +33,6 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int n)
 	return (src_len);
 }
 
-void	ft_printstr(char *str)
-{
-	while (*str != '\0')
-	{
-		write(1, str, 1);
-		str++;
-	}
-}
-
 /*
 int	main(void)
 {

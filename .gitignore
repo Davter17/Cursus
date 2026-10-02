@@ -1,0 +1,51 @@
+# Object files
+*.o
+*.obj
+
+# Binaries
+*.out
+*.exe
+a.out
+
+# Libraries
+*.a
+*.so
+*.dylib
+
+# Dependencies
+.deps/
+
+# Test files
+tester/
+
+# PDF files
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*~
+*.swp
+*.swo
+*.swn
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Compiled files
+*.class
+*.pyc
+*.pyo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

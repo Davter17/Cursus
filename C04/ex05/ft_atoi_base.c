@@ -10,104 +10,88 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_putnbr_base_check(char *base)
+int	ft_atoi_base_check(char *base)
 {
-	int	counter;
-	int	counter_back;
+	int	i;
+	int	j;
 
-	counter = 0;
-	counter_back = 0;
-	while (base[counter] != '\0')
+	i = 0;
+	while (base[i] != '\0')
 	{
-		if (base[counter] == '+' || base[counter] == '-')
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' '
+			|| base[i] == '\t' || base[i] == '\n' || base[i] == '\r'
+			|| base[i] == '\v' || base[i] == '\f')
 			return (0);
-		while (counter_back < counter)
+		j = i + 1;
+		while (base[j] != '\0')
 		{
-			if (base[counter] == base[counter_back])
+			if (base[i] == base[j])
 				return (0);
-			counter_back++;
+			j++;
 		}
-		counter_back = 0;
-		counter++;
+		i++;
 	}
-	return (counter);
+	return (i);
 }
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_atoi_base_recursive(char *str, char *base, int base_len, int *i)
 {
-	int	counter;
+	int	result;
+	int	digit;
 
-	counter = ft_putnbr_base_check(base);
-	number = 0;
-	if (counter < 2)
-		return (0);
-	if (nbr < 0)
-		nbr *= -1;
-	if (nbr >= counter)
-		ft_putnbr_base(nbr / counter, base);
-	return (nbr);
-}
-
-int	ft_atoi(char *str)
-{
-	int	incremental;
-	int	cnt_negative;
-	int	number;
-
-	incremental = 0;
-	cnt_negative = 0;
-	number = 0;
-	while (str[incremental] == ' ')
-		incremental++;
-	if (str[incremental] == '-')
+	result = 0;
+	while (str[*i] != '\0')
 	{
-		cnt_negative++;
-		incremental++;
+		digit = 0;
+		while (base[digit] != '\0')
+		{
+			if (str[*i] == base[digit])
+				break ;
+			digit++;
+		}
+		if (digit >= base_len)
+			break ;
+		result = result * base_len + digit;
+		(*i)++;
 	}
-	while (str[incremental] >= '0' && str[incremental] <= '9')
-	{
-		number = number * 10 + (str[incremental] - '0');
-		incremental++;
-	}
-	if (cnt_negative % 2 != 0)
-		number *= -1;
-	return (number);
+	return (result);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	number;
+	int	base_len;
+	int	i;
+	int	sign;
+	int	result;
 
-	number = ft_atoi(str);
-	number = ft_putnbr_base(number, base);
-	return (number);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb < 0)
+	base_len = ft_atoi_base_check(base);
+	if (base_len < 2)
+		return (0);
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		write(1, "-", 1);
-		nb *= -1;
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	if (nb > 10)
-	{
-		ft_putnbr(nb / 10);
-	}
-	write(1, &"0123456789"[nb % 10], 1);
+	result = ft_atoi_base_recursive(str, base, base_len, &i);
+	return (result * sign);
 }
 
 /*
 int	main(int argc, char **argv)
 {
 	int	number;
-	
+
 	if (argc > 2)
 	{
 		number = ft_atoi_base(argv[1], argv[2]);
-		ft_putnbr(number);
+		return (0);
 	}
+	return (0);
 }
 */

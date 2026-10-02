@@ -10,22 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_ptrnbr(int number)
-{
-	if (number < 0)
-	{
-		write (1, "-", 1);
-		number *= -1;
-	}
-	if (number > 10)
-	{
-		ft_ptrnbr(number / 10);
-	}
-	write(1, &"0123456789"[number % 10], 1);
-}
-
 int	ft_atoi(char *str)
 {
 	int	i;
